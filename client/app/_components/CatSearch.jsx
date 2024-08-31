@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import Link from 'next/link';
 
 function CatSearch() {
     const [searchTerm, setSearchTerm] = useState("");  // State for search term
@@ -84,7 +85,7 @@ function CatSearch() {
 
                 <div className='grid sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-7 gap-4 '>
                     {['Cardiology', 'Neurology', 'Orthopedics', 'Opthalmology', 'Gynecology', 'Oncology', 'Urology', 'Dermatology', 'Oncology'].map((specialty, index) => (
-                        <div key={index} className='relative hover:shadow-lg rounded-2xl transition-shadow duration-300'>
+                        <Link href={`/search/${specialty}`} key={index} className='relative hover:shadow-lg rounded-2xl transition-shadow duration-300'>
                             <Image
                                 alt={specialty}
                                 src={`/${specialty.toLowerCase()}.png`}
@@ -96,7 +97,7 @@ function CatSearch() {
                                 <h2 className='text-gray-400 text-xl'>{specialty}</h2>
 
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>

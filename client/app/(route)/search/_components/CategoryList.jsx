@@ -13,9 +13,15 @@ import {
     CommandShortcut,
 } from "@/components/ui/command"
 import Link from 'next/link'
+import { usePathname } from 'next/navigation';
 
 
 function CategoryList() {
+
+    const params = usePathname();
+    const category = params.split('/')[2];
+
+
     return (
         <div className='h-screen mt-5 flex flex-col  '>
             <Command>
@@ -25,12 +31,13 @@ function CategoryList() {
                     <CommandGroup heading="Suggestions" >
                         {['Cardiology', 'Neurology', 'Orthopedics', 'Opthalmology', 'Gynecology', 'Oncology', 'Urology', 'Dermatology'].map((specialty, index) => (
                             <CommandItem>
-                                <Link href={''}
-                                    className='p-1 flex gap-2 text-[15px]  
+                                <Link href={`/search/${specialty}`}
+                                    className={`p-1 flex gap-2 text-[15px]  
                                     rounded-md cursor-pointer
                                     items-center
                                     w-full
-                                '>
+                                      ${category === specialty ? 'bg-fuchsia-300' : ''}
+                                `}>
                                     <Image
                                         alt={specialty}
                                         src={`/${specialty.toLowerCase()}.png`}
