@@ -31,7 +31,7 @@ function CategoryList() {
                     <CommandGroup heading="Suggestions" >
                         {['Cardiology', 'Neurology', 'Orthopedics', 'Opthalmology', 'Gynecology', 'Oncology', 'Urology', 'Dermatology'].map((specialty, index) => (
                             <CommandItem>
-                                <Link href={`/search/${specialty}`}
+                                <Link href={`/search?category=${specialty}`}
                                     className={`p-1 flex gap-2 text-[15px]  
                                     rounded-md cursor-pointer
                                     items-center

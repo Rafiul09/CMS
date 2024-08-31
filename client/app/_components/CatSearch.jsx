@@ -6,8 +6,9 @@ import Image from 'next/image';
 import React, { useEffect, useState } from "react";
 import Link from 'next/link';
 
-function CatSearch() {
-    const [searchTerm, setSearchTerm] = useState("");  // State for search term
+function CatSearch({category}) {
+    
+    const [searchTerm, setSearchTerm] = useState(category||"");  // State for search term
     const [doctors, setDoctors] = useState([]);  // State for search results
 
     useEffect(() => {
@@ -70,6 +71,8 @@ function CatSearch() {
                     ) : null}
                 </div>
             </div>
+
+
 
 
         </div>
