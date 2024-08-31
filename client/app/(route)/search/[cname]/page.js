@@ -1,10 +1,11 @@
 "use client";
+import CatSearch from '@/app/_components/CatSearch';
 import React from 'react'
-function Search({params}) {
+function Search({ params }) {
 
     return (
-        <div>Search</div>
-        
+        <div>{CatSearch}</div>
+
     )
 }
 
