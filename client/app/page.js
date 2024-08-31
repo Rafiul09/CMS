@@ -13,9 +13,7 @@ export default function Home() {
 
   return (
     <div>
-      {/*hero section */}
       <Hero />
-      {/*search bar + category */}
       <CatSearch />
       <Category />
       <Services />
